@@ -26,7 +26,10 @@ export class ProductService {
     return this.productList;
   }
   searchProductByName(productName: string): Product[] {
-    return this.productList.filter(product=>product._productName == productName )
+    return this.productList.filter(product => product._productName == productName)
+  }
+  getProductById(productId: number): Product[] {
+    return this.productList.filter(product => product._productId == productId)
   }
 
 }

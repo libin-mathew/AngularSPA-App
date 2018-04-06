@@ -38,7 +38,7 @@
           <img [src]="product._image" width="100px" height="100px">
         </td>
         <td>
-          <button>Details</button>
+          <button (click)="showProductDetails($event.target.value)" [value]='product._productId'>Details</button>
         </td>
         <!-- <app-product [product]="product"></app-product> -->
       </tr>

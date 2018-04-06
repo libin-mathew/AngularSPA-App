@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product-services/product.service';
 import { Product } from '../../comon-objects/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-list',
@@ -11,7 +12,7 @@ import { Product } from '../../comon-objects/product';
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService,private router: Router) {
     this.productList = [];
   }
   ngOnInit() {
@@ -26,6 +27,9 @@ export class ProductListComponent implements OnInit {
   }
   searchProductByName(event):void{
     console.log("search");
+  }
+  showProductDetails(productId): void {
+    this.router.navigate(['productdetails', { productId: productId }]);
   }
 
 }
