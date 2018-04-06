@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <div class="form-inline">
+    <input class="form-control mr-sm-2" type="text" />
+    <button class="btn btn-primary my-2 my-sm-0" (click)="searchProductByName($event)">
+      Search
+    </button>
+  </div>
+</nav>
+<div class="jumbotron">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          ProductId
+        </th>
+        <th>
+          Product
+        </th>
+        <th>
+          Price
+          <img (click)="sortProduct($event)" id="asc" src="../assets/image/uKey.png" class="btnImg">
+          <img (click)="sortProduct($event)" id="dsc" src="../assets/image/dKey.png" class="btnImg">
+        </th>
+        <th>
+          Image
+        </th>
+        <th>
+          
+        </th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of productList'>
+        <td>{{product._productId}}</td>
+        <td>{{product._productName}}</td>
+        <td>{{product._price}}</td>
+        <td>
+          <img [src]="product._image" width="100px" height="100px">
+        </td>
+        <td>
+          <button>Details</button>
+        </td>
+        <!-- <app-product [product]="product"></app-product> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
