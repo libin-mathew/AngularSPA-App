@@ -4,18 +4,18 @@ import { Product } from '../comon-objects/product';
 import { NewProductComponent } from './newproduct/newproduct.component';
 import { NgModule } from '@angular/core';
 import { ProductDetailsComponent } from './product-details/product-details.component';
- const routes: Routes = [
+const routes: Routes = [
     {
         path: 'productlist',
-        component: ProductListComponent,
-        data: {
-          title: 'Product Details',
-          productId:0
-        }
-      },
+        component: ProductListComponent
+    },
     {
         path: 'productdetails',
-        component: ProductDetailsComponent
+        component: ProductDetailsComponent,
+        data: {
+            title: 'Product Details',
+            productId: 0
+        }
     },
     {
         path: 'newproduct',
